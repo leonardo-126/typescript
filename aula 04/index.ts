@@ -60,3 +60,31 @@ function userGreeting(user: object){
         console.log(`òla ${user.name}`)
     }
 }
+
+// operador in 
+
+class Dog {
+    name
+    breed
+
+    constructor(name: string, breed?: string){
+        this.name = name
+        if(breed) {
+            this.breed = breed
+        }
+    }
+}
+
+const turca = new Dog("turca")
+const bob = new Dog("Bob", "pastor alemao")
+
+function showDogDetails(dog: Dog){
+    if('breed' in dog){
+        console.log(`O CACHORRO E DA RACA ${dog.breed}`)
+    }else {
+        console.log("O cachorro e um SRD")
+    }
+}
+
+showDogDetails(turca)
+showDogDetails(bob)
